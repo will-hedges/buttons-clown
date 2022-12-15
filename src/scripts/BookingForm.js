@@ -20,7 +20,7 @@ export const BookingForm = () => {
     </div>
     <div class="field">
         <label class="label" for="partyDate">Party Date</label>
-        <input type="text" name="partyDate"></input>
+        <input type="date" name="partyDate"></input>
     </div>
     <div class="field">
         <label class="label" for="bookingHours">Party length (hours)</label>
@@ -60,7 +60,7 @@ mainContainer.addEventListener("click", (event) => {
             numOfChildren: numOfChildren,
             partyAddress: partyAddress,
             partyDate: partyDate,
-            bookingHours: bookingHours,
+            bookingHours: parseInt(bookingHours),
         };
 
         postObjToAPI(bookingObj, "bookings");

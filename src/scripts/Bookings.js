@@ -1,4 +1,4 @@
-import { fetchAPIResource, getApplicationState } from "./dataAccess.js";
+import { getApplicationState } from "./dataAccess.js";
 
 export const Bookings = () => {
     const bookings = getApplicationState("bookings");
@@ -11,6 +11,12 @@ export const Bookings = () => {
     return html;
 };
 
+const convertBookingObjToScheduleListElem = (bookingObj) => {
+    return `
+    <li>
+        
+    </li>`;
+};
 export const Clowns = () => {
     const clowns = getApplicationState("clowns");
     let html = `
