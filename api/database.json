@@ -56,5 +56,18 @@
       "id": 5
     }
   ],
-  "completedBookings": []
+  "completedBookings": [
+    {
+      "bookingId": 5,
+      "clownId": 1,
+      "date_created": 1671131977971,
+      "id": 3
+    },
+    {
+      "bookingId": 5,
+      "clownId": 2,
+      "date_created": 1671132083388,
+      "id": 4
+    }
+  ]
 }

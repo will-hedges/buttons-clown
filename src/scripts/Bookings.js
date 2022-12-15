@@ -1,4 +1,4 @@
-import { getApplicationState } from "./dataAccess.js";
+import { getApplicationState, postObjToAPI } from "./dataAccess.js";
 
 export const Bookings = () => {
     const bookings = getApplicationState("bookings");
@@ -35,21 +35,20 @@ const convertBookingObjToScheduleListElem = (bookingObj) => {
         </button>
     </li>`;
 };
-export const Clowns = () => {
-    const clowns = getApplicationState("clowns");
-    let html = `
-    <ul>
-        ${clowns
-            .map((clown) => convertObjPropToListItem(clown, "name"))
-            .join("")}
-    </ul>`;
-    return html;
-};
 
-const convertObjPropToListItem = (obj, propName) => {
-    return `
-    <li>
-        ${obj[propName]}
-    </li>
-    `;
-};
+const mainContainer = document.querySelector("#container");
+
+mainContainer.addEventListener("change", (event) => {
+    // this is the completed by listener
+    if (event.target.className === "clowns") {
+        // send it to the API as completed
+        const [bookingId, clownId] = event.target.value.split("--");
+        const completionObj = {
+            bookingId: parseInt(bookingId),
+            clownId: parseInt(clownId),
+            date_created: Date.now(),
+        };
+
+        postObjToAPI(completionObj, "completedBookings");
+    }
+});
