@@ -2,6 +2,9 @@ import { getApplicationState } from "./dataAccess.js";
 
 export const Bookings = () => {
     const bookings = getApplicationState("bookings");
+    bookings.sort((booking1, booking2) =>
+        booking1.partyDate > booking2.partyDate ? 1 : -1
+    );
     let html = `
     <ul>
         ${bookings
