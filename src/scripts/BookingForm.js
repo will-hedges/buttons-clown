@@ -26,5 +26,7 @@ export const BookingForm = () => {
         <label class="label" for="bookingHours">Party length (hours)</label>
         <input type="number" name="bookingHours"></input>
     </div>
+
+    <button class="button" id="submitButton">Submit</button>
     `;
 };
