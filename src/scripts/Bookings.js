@@ -1,4 +1,8 @@
-import { getApplicationState, postObjToAPI } from "./dataAccess.js";
+import {
+    delObjFromAPI,
+    getApplicationState,
+    postObjToAPI,
+} from "./dataAccess.js";
 
 export const Bookings = () => {
     const bookings = getApplicationState("bookings");
@@ -18,7 +22,7 @@ const convertBookingObjToScheduleListElem = (bookingObj) => {
     const clowns = getApplicationState("clowns");
 
     return `
-    <li class="reservation">
+    <li class="booking">
         ${bookingObj.partyDate} for ${bookingObj.numOfChildren} kids @ ${
         bookingObj.partyAddress
     } (${bookingObj.parentName})
@@ -50,5 +54,12 @@ mainContainer.addEventListener("change", (event) => {
         };
 
         postObjToAPI(completionObj, "completedBookings");
+    }
+});
+
+mainContainer.addEventListener("click", (event) => {
+    if (event.target.className === "delete__button") {
+        const [, bookingId] = event.target.id.split("--");
+        delObjFromAPI("bookings", parseInt(bookingId));
     }
 });

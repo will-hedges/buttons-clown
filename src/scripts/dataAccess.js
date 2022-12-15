@@ -6,6 +6,16 @@ const API = "http://localhost:8088";
 
 const mainContainer = document.querySelector("#container");
 
+const dispatchStateChangedCustomEvent = () => {
+    mainContainer.dispatchEvent(new CustomEvent("stateChanged"));
+};
+
+export const delObjFromAPI = (resource, id) => {
+    return fetch(`${API}/${resource}/${id}`, { method: "DELETE" }).then(
+        dispatchStateChangedCustomEvent()
+    );
+};
+
 export const fetchAPIResource = (resource) => {
     return fetch(`${API}/${resource}`)
         .then((response) => response.json())
@@ -29,7 +39,5 @@ export const postObjToAPI = (obj, resource) => {
 
     return fetch(`${API}/${resource}`, fetchOptions)
         .then((response) => response.json())
-        .then(() => {
-            mainContainer.dispatchEvent(new CustomEvent("stateChanged"));
-        });
+        .then(dispatchStateChangedCustomEvent());
 };

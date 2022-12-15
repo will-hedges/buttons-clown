@@ -45,29 +45,7 @@
       "partyDate": "2023-01-19",
       "bookingHours": 4,
       "id": 4
-    },
-    {
-      "parentName": "Jordan Plaxico",
-      "childName": "Sammy Plaxico",
-      "numOfChildren": "3",
-      "partyAddress": "123 Main St",
-      "partyDate": "1992-03-06",
-      "bookingHours": 3,
-      "id": 5
     }
   ],
-  "completedBookings": [
-    {
-      "bookingId": 5,
-      "clownId": 1,
-      "date_created": 1671131977971,
-      "id": 3
-    },
-    {
-      "bookingId": 5,
-      "clownId": 2,
-      "date_created": 1671132083388,
-      "id": 4
-    }
-  ]
+  "completedBookings": []
 }
