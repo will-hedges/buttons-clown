@@ -29,7 +29,10 @@ const convertBookingObjToScheduleListElem = (bookingObj) => {
                         return `<option value="${bookingObj.id}--${clown.id}">${clown.name}</option>`;
                     })
                     .join("")}
-            </select>
+        </select>
+        <button class="delete__button" id="booking--${bookingObj.id}">
+            Delete
+        </button>
     </li>`;
 };
 export const Clowns = () => {
