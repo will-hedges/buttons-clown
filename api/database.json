@@ -1,24 +1,33 @@
 {
-    "clowns": [
-        {
-            "id": 1,
-            "name": "Leslie"
-        },
-        {
-            "id": 2,
-            "name": "Mike"
-        }
-    ],
-    "bookings": [
-        {
-            "id": 1,
-            "parentName": "Tom Jones",
-            "childName": "Billy Jones",
-            "numOfChildren": 20,
-            "partyAddress": "321 Partytown Ln",
-            "reservationDate": "2023-01-02",
-            "lengthOfReservation": 3
-        }
-    ],
-    "completedBookings": []
+  "clowns": [
+    {
+      "id": 1,
+      "name": "Leslie"
+    },
+    {
+      "id": 2,
+      "name": "Mike"
+    }
+  ],
+  "bookings": [
+    {
+      "id": 1,
+      "parentName": "Tom Jones",
+      "childName": "Billy Jones",
+      "numOfChildren": 20,
+      "partyAddress": "321 Partytown Ln",
+      "reservationDate": "2023-01-02",
+      "lengthOfReservation": 3
+    },
+    {
+      "parentName": "Tom Jones",
+      "childName": "Billy Jones",
+      "numOfChildren": "20",
+      "partyAddress": "123 Main St",
+      "partyDate": "1/1/2023",
+      "bookingHours": "2",
+      "id": 2
+    }
+  ],
+  "completedBookings": []
 }

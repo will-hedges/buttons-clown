@@ -19,8 +19,8 @@ export const BookingForm = () => {
         <input type="text" name="partyAddress"></input>
     </div>
     <div class="field">
-        <label class="label" for="reservationDate">Party Date</label>
-        <input type="text" name="reservationDate"></input>
+        <label class="label" for="partyDate">Party Date</label>
+        <input type="text" name="partyDate"></input>
     </div>
     <div class="field">
         <label class="label" for="bookingHours">Party length (hours)</label>
@@ -30,3 +30,39 @@ export const BookingForm = () => {
     <button class="button" id="submitButton">Submit</button>
     `;
 };
+
+const mainContainer = document.querySelector("#container");
+
+mainContainer.addEventListener("click", (event) => {
+    if (event.target.id === "submitButton") {
+        const parentName = document.querySelector(
+            "input[name='parentName']"
+        ).value;
+        const childName = document.querySelector(
+            "input[name='childName']"
+        ).value;
+        const numOfChildren = document.querySelector(
+            "input[name='numOfChildren']"
+        ).value;
+        const partyAddress = document.querySelector(
+            "input[name='partyAddress']"
+        ).value;
+        const partyDate = document.querySelector(
+            "input[name='partyDate']"
+        ).value;
+        const bookingHours = document.querySelector(
+            "input[name='bookingHours']"
+        ).value;
+
+        const bookingObj = {
+            parentName: parentName,
+            childName: childName,
+            numOfChildren: numOfChildren,
+            partyAddress: partyAddress,
+            partyDate: partyDate,
+            bookingHours: bookingHours,
+        };
+
+        postObjToAPI(bookingObj, "bookings");
+    }
+});
