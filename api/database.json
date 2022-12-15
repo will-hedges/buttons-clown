@@ -9,6 +9,16 @@
             "name": "Mike"
         }
     ],
-    "bookings": [],
+    "bookings": [
+        {
+            "id": 1,
+            "parentName": "Tom Jones",
+            "childName": "Billy Jones",
+            "numOfChildren": 20,
+            "partyAddress": "321 Partytown Ln",
+            "reservationDate": "2023-01-02",
+            "lengthOfReservation": 3
+        }
+    ],
     "completedBookings": []
 }
