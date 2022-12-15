@@ -16,7 +16,7 @@
       "childName": "Billy Jones",
       "numOfChildren": 20,
       "partyAddress": "321 Partytown Ln",
-      "reservationDate": "2023-01-02",
+      "partyDate": "2023-01-02",
       "bookingHours": 3
     },
     {

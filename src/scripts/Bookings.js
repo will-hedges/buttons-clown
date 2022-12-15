@@ -5,7 +5,7 @@ export const Bookings = () => {
     let html = `
     <ul>
         ${bookings
-            .map((booking) => convertObjPropToListItem(booking, "parentName"))
+            .map((booking) => convertBookingObjToScheduleListElem(booking))
             .join("")}
     </ul>`;
     return html;
@@ -14,7 +14,7 @@ export const Bookings = () => {
 const convertBookingObjToScheduleListElem = (bookingObj) => {
     return `
     <li>
-        
+        ${bookingObj.partyDate} for ${bookingObj.numOfChildren} kids @ ${bookingObj.partyAddress} (${bookingObj.parentName})
     </li>`;
 };
 export const Clowns = () => {
