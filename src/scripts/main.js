@@ -6,6 +6,7 @@ const mainContainer = document.querySelector("#container");
 const render = () => {
     fetchAPIResource("bookings")
         .then(() => fetchAPIResource("clowns"))
+        .then(() => fetchAPIResource("completedBookings"))
         .then(() => {
             mainContainer.innerHTML = ClownService();
         });

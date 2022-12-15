@@ -47,5 +47,42 @@
       "id": 4
     }
   ],
-  "completedBookings": []
+  "completedBookings": [
+    {
+      "bookingId": 3,
+      "clownId": 1,
+      "date_created": 1671135013721,
+      "id": 1
+    },
+    {
+      "bookingId": 3,
+      "clownId": 1,
+      "date_created": 1671135031892,
+      "id": 2
+    },
+    {
+      "bookingId": 3,
+      "clownId": 1,
+      "date_created": 1671135270788,
+      "id": 3
+    },
+    {
+      "bookingId": 3,
+      "clownId": 2,
+      "date_created": 1671136912118,
+      "id": 4
+    },
+    {
+      "bookingId": 3,
+      "clownId": 1,
+      "date_created": 1671137319678,
+      "id": 5
+    },
+    {
+      "bookingId": 1,
+      "clownId": 1,
+      "date_created": 1671139703477,
+      "id": 6
+    }
+  ]
 }
