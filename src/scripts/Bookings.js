@@ -15,9 +15,21 @@ export const Bookings = () => {
 };
 
 const convertBookingObjToScheduleListElem = (bookingObj) => {
+    const clowns = getApplicationState("clowns");
+
     return `
-    <li>
-        ${bookingObj.partyDate} for ${bookingObj.numOfChildren} kids @ ${bookingObj.partyAddress} (${bookingObj.parentName})
+    <li class="reservation">
+        ${bookingObj.partyDate} for ${bookingObj.numOfChildren} kids @ ${
+        bookingObj.partyAddress
+    } (${bookingObj.parentName})
+        <select class="clowns">
+            <option value="">Completed By</option>
+                ${clowns
+                    .map((clown) => {
+                        return `<option value="${bookingObj.id}--${clown.id}">${clown.name}</option>`;
+                    })
+                    .join("")}
+            </select>
     </li>`;
 };
 export const Clowns = () => {

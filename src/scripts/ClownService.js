@@ -1,5 +1,5 @@
 import { BookingForm } from "./BookingForm.js";
-import { Bookings, Clowns } from "./Bookings.js";
+import { Bookings } from "./Bookings.js";
 
 export const ClownService = () => {
     return ` 
@@ -10,8 +10,6 @@ export const ClownService = () => {
     <section class="bookings">
         <h2>Bookings</h2>
         ${Bookings()}
-        <h3>Completed By</h3>
-        ${Clowns()}
     </section>
     `;
 };
