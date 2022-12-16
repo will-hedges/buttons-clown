@@ -14,7 +14,7 @@ export const Bookings = () => {
     let html = `
     <ul class="bookings">
         ${bookings
-            .map((booking) => convertBookingObjToScheduleListElem(booking))
+            .map((booking) => convertBookingObjToListElem(booking))
             .join("")}
     </ul>`;
     return html;
@@ -39,56 +39,38 @@ export const CompletedBookings = () => {
     <ul class="completedBookings">
         ${completedBookings
             .map((completedBooking) =>
-                convertCompletedBookingObjToListItem(completedBooking)
+                convertBookingObjToListElem(completedBooking, true)
             )
             .join("")}
     </ul>
     `;
 };
 
-const convertBookingObjToScheduleListElem = (bookingObj) => {
+const convertBookingObjToListElem = (bookingObj, completed = false) => {
     const clowns = getApplicationState("clowns");
 
+    // find the booking object of a corresponding completedBooking object
+    if (completed) {
+        const bookings = getApplicationState("bookings");
+        bookingObj = bookings.find(
+            (booking) => booking.id === bookingObj.bookingId
+        );
+    }
+
     return `
-    <li class="booking">
-        ${bookingObj.partyDate} for ${bookingObj.numOfChildren} kids @ ${
+        <li class="booking">
+            ${bookingObj.partyDate} for ${bookingObj.numOfChildren} kids @ ${
         bookingObj.partyAddress
     } (${bookingObj.parentName})
-        <select class="clowns">
-            <option value="">Completed By</option>
-                ${clowns
-                    .map((clown) => {
-                        return `<option value="${bookingObj.id}--${clown.id}">${clown.name}</option>`;
-                    })
-                    .join("")}
-        </select>
-        <button class="delete__button" id="booking--${bookingObj.id}">
-            Delete
-        </button>
-    </li>`;
-};
-
-const convertCompletedBookingObjToListItem = (completedBookingObj) => {
-    const bookings = getApplicationState("bookings");
-    const clowns = getApplicationState("clowns");
-    const matchedBooking = bookings.find(
-        (booking) => booking.id === completedBookingObj.bookingId
-    );
-
-    return `
-        <li class="completedBooking">
-            ${matchedBooking.partyDate} for ${
-        matchedBooking.numOfChildren
-    } kids @ ${matchedBooking.partyAddress} (${matchedBooking.parentName})
             <select class="clowns">
                 <option value="">Completed By</option>
                     ${clowns
                         .map((clown) => {
-                            return `<option value="${matchedBooking.id}--${clown.id}">${clown.name}</option>`;
+                            return `<option value="${bookingObj.id}--${clown.id}">${clown.name}</option>`;
                         })
                         .join("")}
             </select>
-            <button class="delete__button" id="booking--${matchedBooking.id}">
+            <button class="delete__button" id="booking--${bookingObj.id}">
                 Delete
             </button>
         </li>
