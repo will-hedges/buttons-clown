@@ -11,78 +11,30 @@
   ],
   "bookings": [
     {
-      "id": 1,
-      "parentName": "Tom Jones",
-      "childName": "Billy Jones",
-      "numOfChildren": 20,
-      "partyAddress": "321 Partytown Ln",
-      "partyDate": "2023-01-02",
-      "bookingHours": 3
+      "parentName": "Will Hedges",
+      "childName": "Jimmy Hedges",
+      "numOfChildren": "7",
+      "partyAddress": "7629 Staffordshire Dr",
+      "partyDate": "2023-01-03",
+      "bookingHours": 3,
+      "id": 1
     },
     {
-      "parentName": "Tom Jones",
-      "childName": "Billy Jones",
-      "numOfChildren": "20",
-      "partyAddress": "123 Main St",
-      "partyDate": "2023-01-07",
+      "parentName": "Jordan Plaxico",
+      "childName": "Sammy Hedges",
+      "numOfChildren": "12",
+      "partyAddress": "8020 Claytie Cir",
+      "partyDate": "2023-02-21",
       "bookingHours": 2,
       "id": 2
-    },
-    {
-      "parentName": "Bill Hedges",
-      "childName": "Katherine Hedges",
-      "numOfChildren": "5",
-      "partyAddress": "8020 Claytie Cir",
-      "partyDate": "2022-12-29",
-      "bookingHours": 3,
-      "id": 3
-    },
-    {
-      "parentName": "Annette Hedges",
-      "childName": "Emily Hedges",
-      "numOfChildren": "6",
-      "partyAddress": "7629 Staffordshire Dr",
-      "partyDate": "2023-01-19",
-      "bookingHours": 4,
-      "id": 4
     }
   ],
   "completedBookings": [
     {
-      "bookingId": 3,
-      "clownId": 1,
-      "date_created": 1671135013721,
-      "id": 1
-    },
-    {
-      "bookingId": 3,
-      "clownId": 1,
-      "date_created": 1671135031892,
-      "id": 2
-    },
-    {
-      "bookingId": 3,
-      "clownId": 1,
-      "date_created": 1671135270788,
-      "id": 3
-    },
-    {
-      "bookingId": 3,
-      "clownId": 2,
-      "date_created": 1671136912118,
-      "id": 4
-    },
-    {
-      "bookingId": 3,
-      "clownId": 1,
-      "date_created": 1671137319678,
-      "id": 5
-    },
-    {
       "bookingId": 1,
       "clownId": 1,
-      "date_created": 1671139703477,
-      "id": 6
+      "date_created": 1671202159134,
+      "id": 1
     }
   ]
 }

@@ -12,7 +12,7 @@ export const Bookings = () => {
         booking1.partyDate > booking2.partyDate ? 1 : -1
     );
     let html = `
-    <ul>
+    <ul class="bookings">
         ${bookings
             .map((booking) => convertBookingObjToScheduleListElem(booking))
             .join("")}
@@ -36,7 +36,7 @@ export const CompletedBookings = () => {
     const completedBookings = getApplicationState("completedBookings");
 
     return `
-    <ul>
+    <ul class="completedBookings">
         ${completedBookings
             .map((completedBooking) =>
                 convertCompletedBookingObjToListItem(completedBooking)
@@ -76,7 +76,7 @@ const convertCompletedBookingObjToListItem = (completedBookingObj) => {
     );
 
     return `
-        <li class="booking">
+        <li class="completedBooking">
             ${matchedBooking.partyDate} for ${
         matchedBooking.numOfChildren
     } kids @ ${matchedBooking.partyAddress} (${matchedBooking.parentName})
