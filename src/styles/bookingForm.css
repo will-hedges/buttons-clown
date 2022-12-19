@@ -48,9 +48,11 @@ h1 {
 }
 
 .all-bookings {
+    margin-left: auto;
+    margin-right: auto;
     background-color: rgba(0, 0, 0, 0.275);
     padding: 1rem;
-    width: 75%;
+    width: 55%;
 }
 
 .bookings, .completedBookings {
