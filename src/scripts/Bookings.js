@@ -50,6 +50,7 @@ export const CompletedBookings = () => {
 
 const convertBookingObjToListElem = (bookingObj, completed = false) => {
     const clowns = getApplicationState("clowns");
+    let deleteButtonText = "Delete";
 
     // find the booking object of a corresponding completedBooking object
     if (completed) {
@@ -57,6 +58,9 @@ const convertBookingObjToListElem = (bookingObj, completed = false) => {
         bookingObj = bookings.find(
             (booking) => booking.id === bookingObj.bookingId
         );
+
+        // replace the "delete" buttons for completed bookings with "revert"
+        deleteButtonText = "Revert";
     }
 
     return `
@@ -76,16 +80,12 @@ const convertBookingObjToListElem = (bookingObj, completed = false) => {
                             .join("")}
                 </select>
                 <button class="delete__button" id="booking--${bookingObj.id}">
-                    Delete
+                    ${deleteButtonText}
                 </button>
             </div>
         </li>
         `;
 };
-
-// replace the "delete" buttons for completed bookings with "revert"
-const completedDeleteButtons = document.querySelectorAll(".delete__button");
-// completedDeleteButtons.innerHTML("Revert");
 
 const mainContainer = document.querySelector("#container");
 
