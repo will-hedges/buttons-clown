@@ -9,32 +9,6 @@
       "name": "Mike"
     }
   ],
-  "bookings": [
-    {
-      "parentName": "Will Hedges",
-      "childName": "Jimmy Hedges",
-      "numOfChildren": "7",
-      "partyAddress": "7629 Staffordshire Dr",
-      "partyDate": "2023-01-03",
-      "bookingHours": 3,
-      "id": 1
-    },
-    {
-      "parentName": "Jordan Plaxico",
-      "childName": "Sammy Hedges",
-      "numOfChildren": "12",
-      "partyAddress": "8020 Claytie Cir",
-      "partyDate": "2023-02-21",
-      "bookingHours": 2,
-      "id": 2
-    }
-  ],
-  "completedBookings": [
-    {
-      "bookingId": 1,
-      "clownId": 1,
-      "date_created": 1671202159134,
-      "id": 1
-    }
-  ]
+  "bookings": [],
+  "completedBookings": []
 }

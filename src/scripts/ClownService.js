@@ -7,13 +7,15 @@ export const ClownService = () => {
     <section class="bookingForm">
         ${BookingForm()}
     </section>
-    <section class="bookings">
-        <h2>Bookings</h2>
-        ${Bookings()}
-    </section>
-    <section class="completedBookings">
-        <h2>Completed Bookings</h2>
-        ${CompletedBookings()}
-    </section>
-    `;
+    <div class="all-bookings">
+        <section class="bookings">
+            <h2>Bookings</h2>
+            ${Bookings()}
+        </section>
+        <section class="completedBookings">
+            <h2>Completed Bookings</h2>
+            ${CompletedBookings()}
+        </section>
+    </div>
+        `;
 };

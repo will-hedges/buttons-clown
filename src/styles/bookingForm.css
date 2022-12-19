@@ -1,9 +1,84 @@
 body {
     background-image: url("../images/minimalist-jester-symbol-wallpaper.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
 }
 
 .bookingForm {
-    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem 2rem;
+    width: 35%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem 2rem;
+}
+
+.label {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.small-fields__container {
+    display: flex;
+    justify-content: space-around;
+}
+
+#submitButton {
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-family: "Luckiest Guy", "Comfortaa", sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.all-bookings {
+    background-color: rgba(0, 0, 0, 0.275);
+    padding: 1rem;
+    width: 75%;
+}
+
+.bookings, .completedBookings {
+    color: #fff;
+}
+
+.bookings h2 {
+    color: #FB5184;
+}
+
+.completedBookings h2 {
+    color: #FCE28A;
+}
+
+.booking {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.booking__details {
+    flex-basis: 70%;
+    flex-wrap: wrap;
+}
+
+.completedBookings .clowns {
+    visibility: hidden;
 }
 
 ul {
@@ -14,19 +89,3 @@ li::before {
     content: "🤡";
 }
 
-.field {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 1rem 5rem;
-}
-
-.label {
-    color: #fff;
-    text-align: start;
-    font-size: 1.1rem;
-}
-
-.bookings, .completedBookings {
-    color: #fff
-}

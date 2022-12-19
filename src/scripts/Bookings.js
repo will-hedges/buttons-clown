@@ -61,17 +61,21 @@ const convertBookingObjToListElem = (bookingObj, completed = false) => {
 
     return `
         <li class="booking">
-            ${bookingObj.partyDate} for ${bookingObj.numOfChildren} kids @ ${
-        bookingObj.partyAddress
-    } (${bookingObj.parentName})
-            <select class="clowns">
-                <option value="">Completed By</option>
-                    ${clowns
-                        .map((clown) => {
-                            return `<option value="${bookingObj.id}--${clown.id}">${clown.name}</option>`;
-                        })
-                        .join("")}
-            </select>
+            <div class="booking__details">
+                ${bookingObj.partyDate} for ${
+        bookingObj.numOfChildren
+    } kids @ ${bookingObj.partyAddress} (${bookingObj.parentName})
+            </div>
+            <div class="booking-buttons__container">
+                <select class="clowns">
+                    <option value="">Completed By</option>
+                        ${clowns
+                            .map((clown) => {
+                                return `<option value="${bookingObj.id}--${clown.id}">${clown.name}</option>`;
+                            })
+                            .join("")}
+                </select>
+            </div>
             <button class="delete__button" id="booking--${bookingObj.id}">
                 Delete
             </button>
@@ -98,7 +102,19 @@ mainContainer.addEventListener("change", (event) => {
 
 mainContainer.addEventListener("click", (event) => {
     if (event.target.className === "delete__button") {
-        const [, bookingId] = event.target.id.split("--");
-        delObjFromAPI("bookings", parseInt(bookingId));
+        let resource = "bookings";
+        let [, id] = event.target.id.split("--");
+        id = parseInt(id);
+
+        // check if the item is in the pending or completed bookings
+        if (event.target.closest(".completedBookings") !== null) {
+            resource = "completedBookings";
+            // if it is completed bookings, we need to get the primary key of the completed object
+            const completedBookings = getApplicationState(resource);
+            id = completedBookings.find(
+                (booking) => booking.bookingId === id
+            ).id;
+        }
+        delObjFromAPI(resource, id);
     }
 });
