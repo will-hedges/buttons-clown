@@ -9,6 +9,41 @@
       "name": "Mike"
     }
   ],
-  "bookings": [],
-  "completedBookings": []
+  "bookings": [
+    {
+      "parentName": "Bill Hedges",
+      "childName": "Emily Hedges",
+      "numOfChildren": "5",
+      "partyAddress": "8020 Claytie Circle, Nashville, TN 37221",
+      "partyDate": "2023-07-11",
+      "bookingHours": 3,
+      "id": 1
+    },
+    {
+      "parentName": "Jordan Plaxico",
+      "childName": "Sammy Hedges",
+      "numOfChildren": "3",
+      "partyAddress": "7629 Staffordshire Dr",
+      "partyDate": "2023-04-15",
+      "bookingHours": 2,
+      "id": 2
+    },
+    {
+      "parentName": "William Hedges",
+      "childName": "Ollie Hedges",
+      "numOfChildren": "3",
+      "partyAddress": "100 Antioch Pike, Apt HH 805, Nashville, TN 37211",
+      "partyDate": "2023-03-06",
+      "bookingHours": 4,
+      "id": 3
+    }
+  ],
+  "completedBookings": [
+    {
+      "bookingId": 3,
+      "clownId": 2,
+      "date_created": 1671468688294,
+      "id": 1
+    }
+  ]
 }

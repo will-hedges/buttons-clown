@@ -75,13 +75,17 @@ const convertBookingObjToListElem = (bookingObj, completed = false) => {
                             })
                             .join("")}
                 </select>
+                <button class="delete__button" id="booking--${bookingObj.id}">
+                    Delete
+                </button>
             </div>
-            <button class="delete__button" id="booking--${bookingObj.id}">
-                Delete
-            </button>
         </li>
         `;
 };
+
+// replace the "delete" buttons for completed bookings with "revert"
+const completedDeleteButtons = document.querySelectorAll(".delete__button");
+// completedDeleteButtons.innerHTML("Revert");
 
 const mainContainer = document.querySelector("#container");
 
