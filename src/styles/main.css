@@ -1,7 +1,23 @@
-ul {
-    list-style-type: none;
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+@import url("https://fonts.googleapis.com/css?family=Comfortaa|Luckiest+Guy");
+@import "bookingForm.css";
+
+/*Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+	color: #404040;
+	font-family: "Comfortaa", Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.5;
 }
 
-li::before {
-    content: "🤡";
+h1,h2,h3,h4,h5,h6 {
+	font-family: "Luckiest Guy", serif;
+    color: #fff;
+	letter-spacing: 2px;
 }

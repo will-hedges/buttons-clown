@@ -5,9 +5,11 @@ import {
 } from "./dataAccess.js";
 
 export const Bookings = () => {
+    // filter bookings against bookings that are already complete
     let bookings = getApplicationState("bookings");
     bookings = bookings.filter(checkIfPending);
 
+    // sort bookings by date, closest -> furthest (ternary)
     bookings.sort((booking1, booking2) =>
         booking1.partyDate > booking2.partyDate ? 1 : -1
     );

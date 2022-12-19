@@ -1,0 +1,32 @@
+body {
+    background-image: url("../images/minimalist-jester-symbol-wallpaper.jpg");
+}
+
+.bookingForm {
+    width: 25%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li::before {
+    content: "🤡";
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem 5rem;
+}
+
+.label {
+    color: #fff;
+    text-align: start;
+    font-size: 1.1rem;
+}
+
+.bookings, .completedBookings {
+    color: #fff
+}
